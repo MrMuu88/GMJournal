@@ -18,4 +18,8 @@ buildscript {
     }
 }
 
+project.ext.vectoricons = [
+    iconFontNames: [ 'MaterialIcons.ttf', 'EvilIcons.ttf','FontAwesome6.ttf' ] // Specify font files
+]
+
 apply plugin: "com.facebook.react.rootproject"
