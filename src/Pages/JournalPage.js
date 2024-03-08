@@ -7,7 +7,9 @@ export const JournalPage = () => {
     return (
         <View style={{ flexGrow: 1 }}>
             <Text style={{ color: 'black' }}>This is the Journal page</Text>
-            <Notes />
+            <Notes style={{ zIndex: 1 }} />
+            <Notes style={{ zIndex: 1 }} />
+            <Notes style={{ zIndex: 1 }} />
             <AddButtons />
         </View>
     );
