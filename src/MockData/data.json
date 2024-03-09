@@ -4,7 +4,7 @@
     "title": "this will be the entry title",
     "color": "#000000",
     "icon": "http:/logo.svg",
-    "data": [
+    "entries": [
         {
             "type": "image",
             "title": "this is the Image title",
@@ -47,8 +47,8 @@
         },
         {
             "type": "Note",
-            "title": "",
-            "Text": ""
+            "title": "from data",
+            "text": "comes from the mock data file"
         },
         {
             "type": "pageLink",
