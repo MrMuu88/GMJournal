@@ -5,7 +5,7 @@ import React from "react";
 import { Menu, MenuOptions, MenuOption, MenuTrigger } from "react-native-popup-menu";
 import { Icon } from "@rneui/themed";
 
-export const SimpleMenu = ({ onDelete }) => {
+export const SimpleMenu = ({ entry, onDelete }) => {
     return (
         <Menu>
             <MenuTrigger customStyles={{
@@ -25,7 +25,7 @@ export const SimpleMenu = ({ onDelete }) => {
                     <Icon name="cut" type="font-awesome-5" color="black" />
                     <Text style={style.menuText}>Cut</Text>
                 </MenuOption>
-                <MenuOption onSelect={() => onDelete()} style={style.MenuItem}>
+                <MenuOption onSelect={() => onDelete(entry)} style={style.MenuItem}>
                     <Icon name="delete" color="black" type="material-community" />
                     <Text style={style.menuText}>Delete</Text>
                 </MenuOption>

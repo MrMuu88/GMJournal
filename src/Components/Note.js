@@ -8,7 +8,7 @@ export const Note = ({ note, onDelete }) => {
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', color: "azure" }}>
                 {/*ide kell egy icon a név elé*/}
                 <TextInput style={{ color: 'black', fontWeight: 'bold', fontSize: 24 }} autoComplete='off'>{note.title}</TextInput>
-                <SimpleMenu onDelete={onDelete} />
+                <SimpleMenu entry={note} onDelete={onDelete} />
             </View>
             <Card.Divider />
             <View>

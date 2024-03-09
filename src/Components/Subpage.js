@@ -15,7 +15,7 @@ export const Subpage = ({ subPage, onDelete }) => {
                     <TextInput style={{ color: 'black', fontWeight: 'bold', fontSize: 24 }}>{subPage.title}</TextInput>
                     <TextInput>description</TextInput>
                 </View>
-                <SimpleMenu onDelete={onDelete} />
+                <SimpleMenu entry={subPage} onDelete={onDelete} />
             </View>
         </Card>
     );
