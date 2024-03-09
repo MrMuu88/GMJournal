@@ -1,21 +1,18 @@
-import { View, Text } from "react-native";
+import { View, Text, TextInput } from "react-native";
 import { Card } from '@rneui/themed';
 import { SimpleMenu } from "./SimpleMenu";
 
-export const Note = () => {
-
+export const Note = ({ note }) => {
     return (
         <Card>
-            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between', color: "azure" }}>
                 {/*ide kell egy icon a név elé*/}
-                <Text style={{ color: 'black', fontWeight: 'bold', fontSize: 24 }}>This is the Note Title</Text>
+                <TextInput style={{ color: 'black', fontWeight: 'bold', fontSize: 24 }}>{note.title}</TextInput>
                 <SimpleMenu />
-                {/* id még kell egy ... gyors menu gomb: move, copy, delete, configure? */}
-                {/* ha ügyesen meg tudom oldani az edit-et, akkor lehet nem is kell a configure*/}
             </View>
             <Card.Divider />
             <View>
-                <Text style={{ color: 'black', fontSize: 16 }}>This is the Content of the note</Text>
+                <TextInput style={{ color: 'black', fontSize: 16 }} multiline={true}>{note.text}</TextInput>
             </View>
         </Card>
     );
