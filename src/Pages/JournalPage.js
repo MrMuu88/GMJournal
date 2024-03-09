@@ -14,9 +14,9 @@ export const JournalPage = () => {
     const toComponent = (data) => {
         switch (data.type) {
             case "note":
-                return <Note note={data} />
+                return <Note note={data} onDelete={() => { setEntries(entries.filter(e => e !== data)) }} />
             case "image":
-                return <ImageDisplay imageData={data} />
+                return <ImageDisplay imageData={data} onDelete={() => { setEntries(entries.filter(e => e !== data)) }} />
             case "subpage":
                 return;
 
@@ -30,11 +30,11 @@ export const JournalPage = () => {
                     entries.map(e => toComponent(e))
                 }
                 {
-                    entries.filter(e => e.type === "subpage").map(sp => <Subpage subPage={sp} />)
+                    entries.filter(e => e.type === "subpage").map(sp => <Subpage subPage={sp} onDelete={() => { setEntries(entries.filter(e => e !== sp)) }} />)
                 }
                 <Text style={{ height: 100 }}>{/* ez itt direct üres hogy legyen egy kis üres tér a lista alján*/}</Text>
             </ScrollView>
-            <AddButtons onUpdate={(data) => { console.log(JSON.stringify(data)); setEntries([...entries, data]); }} />
+            <AddButtons onUpdate={(data) => { setEntries([...entries, data]); }} />
         </View>
     );
 }

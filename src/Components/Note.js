@@ -2,13 +2,13 @@ import { View, Text, TextInput } from "react-native";
 import { Card } from '@rneui/themed';
 import { SimpleMenu } from "./SimpleMenu";
 
-export const Note = ({ note }) => {
+export const Note = ({ note, onDelete }) => {
     return (
         <Card>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', color: "azure" }}>
                 {/*ide kell egy icon a név elé*/}
                 <TextInput style={{ color: 'black', fontWeight: 'bold', fontSize: 24 }} autoComplete='off'>{note.title}</TextInput>
-                <SimpleMenu />
+                <SimpleMenu onDelete={onDelete} />
             </View>
             <Card.Divider />
             <View>

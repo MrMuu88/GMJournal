@@ -3,7 +3,7 @@ import { Card, Icon } from '@rneui/themed';
 import { SimpleMenu } from './SimpleMenu';
 
 
-export const Subpage = ({ subPage }) => {
+export const Subpage = ({ subPage, onDelete }) => {
 
     return (
         <Card borderRadius={30} >
@@ -15,7 +15,7 @@ export const Subpage = ({ subPage }) => {
                     <TextInput style={{ color: 'black', fontWeight: 'bold', fontSize: 24 }}>{subPage.title}</TextInput>
                     <TextInput>description</TextInput>
                 </View>
-                <SimpleMenu />
+                <SimpleMenu onDelete={onDelete} />
             </View>
         </Card>
     );
