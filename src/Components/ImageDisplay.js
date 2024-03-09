@@ -1,6 +1,8 @@
 import { Card } from "@rneui/themed";
 import { useEffect, useState } from "react";
 import { Image, Text } from "react-native";
+import { SimpleMenu } from "./SimpleMenu";
+import { View } from "react-native";
 
 export const ImageDisplay = ({ imageData }) => {
 
@@ -11,9 +13,13 @@ export const ImageDisplay = ({ imageData }) => {
     //const img = require(imageData.uri);
     return (
         <Card >
-            <Text style={{ color: 'black', textAlign: 'center', fontWeight: 'bold', fontSize: 24 }}>{imageData.title}</Text>
-            <Image style={{ flex: 1, width: '100%', height: 200 }} source={{ uri: imageData.uri }} />
-            <Text style={{ alignSelf: 'baseline', padding: 5, backgroundColor: '#000000', opacity: 0.7 }}></Text>
+            <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+
+                <Text style={{ color: 'black', textAlign: 'center', fontWeight: 'bold', fontSize: 24 }}>{imageData.title}</Text>
+                <SimpleMenu />
+            </View>
+            <Image style={{ width: '100%', height: 200, backgroundColor: 'plum' }} source={{ uri: imageData.uri }} />
+
         </Card>
     );
 };

@@ -8,6 +8,7 @@
         {
             "type": "image",
             "title": "Hacker",
+            "filename": "my file",
             "uri": "content://com.android.providers.media.documents/document/image%3A1000000301",
             "pins": [
                 {

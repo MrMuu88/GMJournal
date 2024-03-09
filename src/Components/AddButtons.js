@@ -2,7 +2,6 @@ import { View, Alert, StyleSheet } from "react-native";
 import { useState } from "react";
 import { FAB } from "@rneui/themed";
 import DocumentPicker from "react-native-document-picker";
-import RNFS from "react-native-fs";
 
 export const AddButtons = ({ onUpdate }) => {
     const [fabsVisible, setFabsVisible] = useState(false);
@@ -21,7 +20,7 @@ export const AddButtons = ({ onUpdate }) => {
 
     const createNote = () => {
         setFabsVisible(false);
-        const newNote = { id: 10, type: "Note", title: "from FABS", text: "added by the \"add note\" FAB" };
+        const newNote = { id: 10, type: "note", title: "from FABS", text: "added by the \"add note\" FAB" };
         onUpdate(newNote);
     };
 
@@ -31,12 +30,11 @@ export const AddButtons = ({ onUpdate }) => {
         try {
             const result = await DocumentPicker.pickSingle();
             console.log(JSON.stringify(result));
-            let imgContent = await RNFS.readFile(result.uri, 'base64');
 
             const newImage = {
                 type: "image",
                 title: "Hacker",
-                uri: `data:${result.type};base64,${imgContent}`
+                uri: result.uri
             };
             onUpdate(newImage);
         } catch (err) {
