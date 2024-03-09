@@ -7,7 +7,8 @@
     "entries": [
         {
             "type": "image",
-            "title": "this is the Image title",
+            "title": "Hacker",
+            "uri": "../MockData/hacker.png",
             "pins": [
                 {
                     "Xcord": 1,
@@ -46,7 +47,7 @@
             "data": "asdf,asdf,asdf\nqwe,qwe,qwe"
         },
         {
-            "type": "Note",
+            "type": "note",
             "title": "from data",
             "text": "comes from the mock data file"
         },

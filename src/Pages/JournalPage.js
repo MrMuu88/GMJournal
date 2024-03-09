@@ -1,21 +1,33 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import { AddButtons } from "../Components/AddButtons";
 import { Note } from "../Components/Note";
 import { useState } from "react";
-import { Button } from "@rneui/themed";
 import { ScrollView } from "react-native";
 import { Subpage } from "../Components/Subpage";
+import { ImageDisplay } from "../Components/ImageDisplay";
 
 export const JournalPage = () => {
     const [journalData, setJournalData] = useState(require("../MockData/data.json"));
 
     const [entries, setEntries] = useState(journalData.entries);
 
+    const toComponent = (data) => {
+        switch (data.type) {
+            case "note":
+                return <Note note={data} />
+            case "image":
+                return <ImageDisplay imageData={data} />
+            case "subpage":
+                return;
+
+        }
+    };
+
     return (
         <View style={{ flexGrow: 1 }}>
             <ScrollView style={{ flex: 1, margin: 10 }}>
                 {
-                    entries.filter(e => e.type === "Note").map(e => <Note key={e.id} note={e} />)
+                    entries.map(e => toComponent(e))
                 }
                 {
                     entries.filter(e => e.type === "subpage").map(sp => <Subpage subPage={sp} />)
