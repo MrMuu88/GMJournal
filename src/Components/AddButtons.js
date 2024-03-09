@@ -2,11 +2,15 @@ import { View, Alert, StyleSheet } from "react-native";
 import { useState } from "react";
 import { FAB } from "@rneui/themed";
 
-export const AddButtons = () => {
+export const AddButtons = ({ onUpdate }) => {
     const [fabsVisible, setFabsVisible] = useState(false);
 
     const createLink = () => { setFabsVisible(false); Alert.alert("creating a new link"); };
-    const createNote = () => { setFabsVisible(false); Alert.alert("creating a new note"); };
+    const createNote = () => {
+        setFabsVisible(false);
+        const newNote = { id: 10, type: "Note", title: "from FABS", text: "added by the \"add note\" FAB" };
+        onUpdate(newNote);
+    };
     const createTable = () => { setFabsVisible(false); Alert.alert("creating a new table"); };
     const createImage = () => { setFabsVisible(false); Alert.alert("creating a new image"); };
     const createSubPage = () => { setFabsVisible(false); Alert.alert("creating a new subpage"); };
