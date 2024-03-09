@@ -7,12 +7,12 @@ export const Note = ({ note }) => {
         <Card>
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', color: "azure" }}>
                 {/*ide kell egy icon a név elé*/}
-                <TextInput style={{ color: 'black', fontWeight: 'bold', fontSize: 24 }}>{note.title}</TextInput>
+                <TextInput style={{ color: 'black', fontWeight: 'bold', fontSize: 24 }} autoComplete='off'>{note.title}</TextInput>
                 <SimpleMenu />
             </View>
             <Card.Divider />
             <View>
-                <TextInput style={{ color: 'black', fontSize: 16 }} multiline={true}>{note.text}</TextInput>
+                <TextInput style={{ color: 'black', fontSize: 16 }} multiline={true} autoComplete='off'>{note.text}</TextInput>
             </View>
         </Card>
     );
