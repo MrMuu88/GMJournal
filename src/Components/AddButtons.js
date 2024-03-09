@@ -1,6 +1,8 @@
 import { View, Alert, StyleSheet } from "react-native";
 import { useState } from "react";
 import { FAB } from "@rneui/themed";
+import DocumentPicker from "react-native-document-picker";
+import RNFS from "react-native-fs";
 
 export const AddButtons = ({ onUpdate }) => {
     const [fabsVisible, setFabsVisible] = useState(false);
@@ -24,7 +26,25 @@ export const AddButtons = ({ onUpdate }) => {
     };
 
     const createTable = () => { setFabsVisible(false); Alert.alert("creating a new table"); };
-    const createImage = () => { setFabsVisible(false); Alert.alert("creating a new image"); };
+    const createImage = async () => {
+        setFabsVisible(false);
+        try {
+            const result = await DocumentPicker.pickSingle();
+            console.log(JSON.stringify(result));
+            let imgContent = await RNFS.readFile(result.uri, 'base64');
+
+            const newImage = {
+                type: "image",
+                title: "Hacker",
+                uri: `data:${result.type};base64,${imgContent}`
+            };
+            onUpdate(newImage);
+        } catch (err) {
+            console.warn(err);
+        }
+    };
+
+
     const createLink = () => { setFabsVisible(false); Alert.alert("creating a new link"); };
 
     return (

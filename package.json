@@ -17,6 +17,8 @@
     "@rneui/themed": "^4.0.0-rc.8",
     "react": "18.2.0",
     "react-native": "0.73.5",
+    "react-native-document-picker": "^9.1.1",
+    "react-native-fs": "^2.20.0",
     "react-native-gesture-handler": "^2.15.0",
     "react-native-popup-menu": "^0.16.1",
     "react-native-reanimated": "^3.7.2",

@@ -8,7 +8,7 @@
         {
             "type": "image",
             "title": "Hacker",
-            "uri": "../MockData/hacker.png",
+            "uri": "content://com.android.providers.media.documents/document/image%3A1000000301",
             "pins": [
                 {
                     "Xcord": 1,

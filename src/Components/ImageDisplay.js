@@ -12,8 +12,8 @@ export const ImageDisplay = ({ imageData }) => {
     return (
         <Card >
             <Text style={{ color: 'black', textAlign: 'center', fontWeight: 'bold', fontSize: 24 }}>{imageData.title}</Text>
-            <Image style={{ flex: 1, width: '100%' }} source={image} />
-            <Text style={{ alignSelf: 'baseline', padding: 5, backgroundColor: '#000000', opacity: 0.7 }}>{imageData.uri}</Text>
+            <Image style={{ flex: 1, width: '100%', height: 200 }} source={{ uri: imageData.uri }} />
+            <Text style={{ alignSelf: 'baseline', padding: 5, backgroundColor: '#000000', opacity: 0.7 }}></Text>
         </Card>
     );
 };
