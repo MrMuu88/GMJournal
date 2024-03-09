@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import { Card } from '@rneui/themed';
 import { SimpleMenu } from "./SimpleMenu";
 
-export const Notes = () => {
+export const Note = () => {
 
     return (
         <Card>
