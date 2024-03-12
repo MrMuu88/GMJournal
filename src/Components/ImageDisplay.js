@@ -12,7 +12,7 @@ export const ImageDisplay = ({ imageData, onDelete }) => {
                 <Text style={{ color: 'black', textAlign: 'center', fontWeight: 'bold', fontSize: 24 }}>{imageData.title}</Text>
                 <SimpleMenu entry={imageData} onDelete={onDelete} />
             </View>
-            <Image style={{ width: '100%', height: 200, backgroundColor: 'plum' }} source={{ uri: imageData.uri }} />
+            <Image style={{ height: 200, width: '100%', backgroundColor: 'plum' }} source={{ uri: imageData.uri }} />
         </Card>
     );
 };

@@ -5,7 +5,7 @@ import { useState } from "react";
 import { ScrollView } from "react-native";
 import { Subpage } from "../Components/Subpage";
 import { ImageDisplay } from "../Components/ImageDisplay";
-import DocumentPicker from 'react-native-document-picker';
+import { launchImageLibrary } from 'react-native-image-picker';
 
 export const JournalPage = () => {
     const journalData = require("../MockData/data.json");
@@ -37,27 +37,38 @@ export const JournalPage = () => {
     };
 
     const createImage = async () => {
-        try {
-            const result = await DocumentPicker.pickSingle();
-            console.log(JSON.stringify(result));
+        const options = {
+            mediaType: 'photo',
+            includeBase64: false
+        }
 
-            return {
-                type: "image",
-                title: result.name,
-                uri: result.uri
-            };
-        } catch (err) {
-            console.warn(err);
+        let response = await launchImageLibrary(options);
+
+        if (response.didCancel) {
+            console.log("user canceled");
             return null;
         }
+        if (response.error) {
+            console.log("Image Picker error: " + response.error);
+            return null;
+        }
+
+
+        return {
+            type: "image",
+            title: response.assets?.[0].fileName,
+            filename: response.assets?.[0].fileName,
+            uri: response.assets?.[0]?.uri
+        };
     };
+
 
     const createLink = () => {
         Alert.alert("creating a new link");
         return null;
     };
 
-    const createNewEntry = (command) => {
+    const createNewEntry = async (command) => {
         let newEntry = null;
         switch (command) {
             case "subpage":
@@ -67,7 +78,7 @@ export const JournalPage = () => {
                 newEntry = createNote();
                 break;
             case "image":
-                newEntry = createImage();
+                newEntry = await createImage();
                 break;
             case "table":
                 newEntry = createTable();
@@ -76,7 +87,9 @@ export const JournalPage = () => {
                 newEntry = createLink();
                 break;
         }
-        if (newEntry !== null) {
+
+        if (newEntry !== null && newEntry !== undefined) {
+            console.log("creating new entry: " + JSON.stringify(newEntry));
             setEntries([...entries, newEntry]);
         }
     };
