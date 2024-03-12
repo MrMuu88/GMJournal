@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ScrollView } from "react-native";
 import { Subpage } from "../Components/Subpage";
 import { ImageDisplay } from "../Components/ImageDisplay";
+import DocumentPicker from 'react-native-document-picker';
 
 export const JournalPage = () => {
     const journalData = require("../MockData/data.json");
