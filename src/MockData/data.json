@@ -65,7 +65,8 @@
             "id": 5,
             "type": "subpage",
             "title": "this is the child title",
-            "icon": "http:/logo.svg"
+            "icon": "http:/logo.svg",
+            "color": "#000000"
         }
     ]
 }

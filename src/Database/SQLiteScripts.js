@@ -1,4 +1,4 @@
-export class DatabaseScripts {
+export class SQLiteScripts {
 
     createMigrationHistory = `
         CREATE TABLE IF NOT EXISTS "__EFMigrationsHistory" (

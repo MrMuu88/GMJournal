@@ -1,18 +1,29 @@
-import { View, Button, Text, Alert } from "react-native";
+import { View, Button, Text, Alert, StyleSheet } from "react-native";
 import { DataStoreService } from '../Services/DataStoreService';
 
 export const DatabaseHandlerPage = () => {
     const db = new DataStoreService("GmJournal.db");
 
-    const createDatabase = async () => { await db.createDatabase(); };
-    const createPage = async () => { await db.Pages.create({ parentId: null, title: "asdasd", color: '#000000', icon: null }); };
+    const createPage = async () => { await db.Pages.create(null, { title: "new Page", color: '#000000', icon: null }); };
     const readPage = async () => { await db.Pages.getById(1); };
+    const createNote = async () => { };
+    const createImage = async () => { };
+    const createtable = async () => { };
+
 
     return (
         <View style={{ flex: 1 }}>
-            <Button style={{ padding: 10, margin: 10 }} title="Create database" onPress={() => createDatabase()} />
-            <Button style={{ padding: 10, margin: 10 }} title="Create page in DB" onPress={() => createPage()} />
-            <Button style={{ padding: 10, margin: 10 }} title="get pages" onPress={() => readPage()} />
+            <View style={styles.button}><Button color="green" title="Create page in DB" onPress={() => createPage()} /></View>
+            <View style={styles.button}><Button title="read page" onPress={() => readPage()} /></View>
+            <View style={styles.button}><Button color="green" title="create Note" onPress={() => createNote()} /></View>
+            <View style={styles.button}><Button color="green" title="create image" onPress={() => createImage()} /></View>
+            <View style={styles.button}><Button color="green" title="create table" onPress={() => createtable()} /></View>
         </View>
     );
 };
+
+const styles = StyleSheet.create({
+    button: {
+        padding: 10
+    },
+});
