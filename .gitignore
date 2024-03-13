@@ -65,3 +65,6 @@ yarn-error.log
 # testing
 /coverage
 game-icons.net.svg.zip
+GMJournal.db
+GMJournal.db-shm
+GMJournal.db-wal

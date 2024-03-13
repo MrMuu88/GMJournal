@@ -8,6 +8,7 @@ import { JournalPage } from './src/Pages/JournalPage.js';
 import { InDevelopment } from './src/Pages/InDevelopment.js';
 import { CustomDrawer } from './src/Components/CustomDrawer.js';
 import { MenuProvider } from 'react-native-popup-menu';
+import { DatabaseHandlerPage } from './src/Pages/DataBaseHandler.js';
 
 const App = () => {
 
@@ -21,6 +22,7 @@ const App = () => {
           <Drawer.Screen name="Monsters" component={InDevelopment} />
           <Drawer.Screen name="Spells" component={InDevelopment} />
           <Drawer.Screen name="Items" component={InDevelopment} />
+          <Drawer.Screen name="DatabaseHandler" component={DatabaseHandlerPage} />
         </Drawer.Navigator>
       </NavigationContainer>
     </MenuProvider>

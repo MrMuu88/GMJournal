@@ -6,6 +6,7 @@
     "icon": "http:/logo.svg",
     "entries": [
         {
+            "id": 1,
             "type": "image",
             "title": "Hacker",
             "filename": "my file",
@@ -38,6 +39,7 @@
             ]
         },
         {
+            "id": 2,
             "type": "table",
             "columns": 3,
             "rows": 3,
@@ -48,19 +50,20 @@
             "data": "asdf,asdf,asdf\nqwe,qwe,qwe"
         },
         {
+            "id": 3,
             "type": "note",
             "title": "from data",
             "text": "comes from the mock data file"
         },
         {
+            "id": 4,
             "type": "pageLink",
-            "id": 2,
             "title": "this is the child title",
             "icon": "http:/logo.svg"
         },
         {
+            "id": 5,
             "type": "subpage",
-            "id": 2,
             "title": "this is the child title",
             "icon": "http:/logo.svg"
         }

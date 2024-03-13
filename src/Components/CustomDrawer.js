@@ -1,6 +1,5 @@
 import { DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 import { View, Text } from 'react-native';
-
 export const CustomDrawer = (props) => {
 
     return (
@@ -12,6 +11,7 @@ export const CustomDrawer = (props) => {
                 <DrawerItemList  {...props} />
             </DrawerContentScrollView>
             <View style={{ borderTopWidth: 1 }} >
+
                 <DrawerItem {...props} label="About" />
                 <DrawerItem {...props} label="Settings" />
             </View>
