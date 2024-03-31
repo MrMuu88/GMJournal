@@ -1,11 +1,9 @@
 import { View, Button, Text, Alert, StyleSheet } from "react-native";
-import { DataStoreService } from '../Services/DataStoreService';
 
 export const DatabaseHandlerPage = () => {
-    const db = new DataStoreService("GmJournal.db");
 
-    const createPage = async () => { await db.Pages.create(null, { title: "new Page", color: '#000000', icon: null }); };
-    const readPage = async () => { await db.Pages.getById(1); };
+    const createPage = async () => {}; 
+    const readPage = async () => {};   
     const createNote = async () => { };
     const createImage = async () => { };
     const createtable = async () => { };
