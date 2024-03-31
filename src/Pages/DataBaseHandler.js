@@ -1,10 +1,13 @@
 import { View, Button, Text, Alert, StyleSheet } from "react-native";
+import { Note } from "../Entities/Note";
 
 export const DatabaseHandlerPage = () => {
 
     const createPage = async () => {}; 
     const readPage = async () => {};   
-    const createNote = async () => { };
+    const createNote = async () => {
+
+    };
     const createImage = async () => { };
     const createtable = async () => { };
 
