@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "target": "esnext",
     "module": "commonjs",
     "allowJs": true,
@@ -28,5 +30,5 @@
    "exclude": ["node_modules", "dist"],
    "include": [
      "./src/**/*",
-   ]
+   ],
  }
